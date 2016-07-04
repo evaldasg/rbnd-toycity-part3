@@ -22,6 +22,10 @@ class Product
     def find_by_title(lookup_title)
       @@products.find { |product| product.title == lookup_title }
     end
+
+    def in_stock
+      @@products.select(&:in_stock?)
+    end
   end
 
   private
