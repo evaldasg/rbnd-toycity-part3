@@ -31,7 +31,7 @@ class Product
   private
 
   def add_to_products
-    raise DuplicateProductError, "#{title} already exists." if find_duplicate
+    raise DuplicateProductError, "'#{title}' already exists." if find_duplicate
     @@products << self
   end
 
