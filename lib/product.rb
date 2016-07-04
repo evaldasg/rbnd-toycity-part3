@@ -1,15 +1,27 @@
 class Product
-  attr_reader :title
+  attr_reader :title, :price, :stock
 
   @@products = []
 
   def initialize(options = {})
     @title = options[:title]
+    @price = options[:price]
+    @stock = options[:stock]
     add_to_products
   end
 
-  def self.all
-    @@products
+  def in_stock?
+    stock > 0
+  end
+
+  class << self
+    def all
+      @@products
+    end
+
+    def find_by_title(lookup_title)
+      @@products.find { |product| product.title == lookup_title }
+    end
   end
 
   private
