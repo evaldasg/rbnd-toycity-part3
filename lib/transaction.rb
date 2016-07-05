@@ -5,9 +5,14 @@ class Transaction
 
   def initialize(customer, product)
     @customer = customer
-    @product = product.reduce_stock
+    @product = product.decrement_stock
     @id = @@transactions.map(&:id).max.to_i + 1
     @@transactions << self
+  end
+
+  def delete
+    product.increment_stock
+    @@transactions.delete(self)
   end
 
   class << self

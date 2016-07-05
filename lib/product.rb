@@ -14,10 +14,14 @@ class Product
     stock > 0
   end
 
-  def reduce_stock
+  def decrement_stock
     raise OutOfStockError, "'#{title}' is out of stock." unless in_stock?
     @stock -= 1
     self
+  end
+
+  def increment_stock
+    @stock += 1
   end
 
   class << self

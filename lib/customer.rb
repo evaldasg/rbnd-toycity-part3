@@ -12,6 +12,11 @@ class Customer
     Transaction.new(self, product)
   end
 
+  def return_item(product)
+    purchases = Transaction.find_by(customer_name: name).select { |transaction| transaction.product == product }
+    purchases.first.delete
+  end
+
   class << self
     def all
       @@customers
