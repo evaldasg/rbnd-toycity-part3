@@ -13,8 +13,11 @@ class Customer
   end
 
   def return_item(product)
-    purchases = Transaction.find_by(customer_name: name).select { |transaction| transaction.product == product }
     purchases.first.delete
+  end
+
+  def purchases
+    Transaction.find_by(customer_name: name).select { |transaction| transaction.product == product }
   end
 
   class << self
