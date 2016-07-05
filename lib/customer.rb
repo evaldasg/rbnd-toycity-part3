@@ -33,7 +33,7 @@ class Customer
   private
 
   def add_to_customers
-    raise DuplicateProductError, "'#{name}' already exists." if find_duplicate
+    raise DuplicateCustomerError, "'#{name}' already exists." if find_duplicate
     @@customers << self
   end
 
