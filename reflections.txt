@@ -1,0 +1,12 @@
+Q. How long did you spend working on this project?
+A. I didn't count all hours, but I guess it took not more than 4-5h
+
+Q. What was the most rewarding challenge you conquered?
+A. Frankly, none of challenge was so hard. But I was very happy about the idea of this project.
+
+Q. What two additional features did you build? Why?
+A. I did finding transaction by some key value pair (like customer_name: 'Walter Latimer') and reutrning an item. First one is very helpful for second one; and I think that none of retailer works without returning item ability.
+
+Q. Where do you still have room to grow?
+A. Well, I would say everywhere. F.e. those three classes has many similarities and share almost same logic, so it would be good to create some generic class and inherit from it.
+
